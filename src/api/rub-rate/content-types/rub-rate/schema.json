@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "rub_rates",
+  "info": {
+    "singularName": "rub-rate",
+    "pluralName": "rub-rates",
+    "displayName": "rub_rate"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rate": {
+      "type": "decimal"
+    }
+  }
+}
