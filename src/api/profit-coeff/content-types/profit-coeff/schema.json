@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profit_coeffs",
+  "info": {
+    "singularName": "profit-coeff",
+    "pluralName": "profit-coeffs",
+    "displayName": "profit_coeff"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount_min": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "amount_max": {
+      "type": "decimal",
+      "required": true
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "coefficient": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}

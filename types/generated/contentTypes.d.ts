@@ -430,6 +430,39 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProfitCoeffProfitCoeff extends Struct.CollectionTypeSchema {
+  collectionName: 'profit_coeffs';
+  info: {
+    displayName: 'profit_coeff';
+    pluralName: 'profit-coeffs';
+    singularName: 'profit-coeff';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    amount_max: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    amount_min: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
+    coefficient: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    is_active: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::profit-coeff.profit-coeff'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRateRate extends Struct.CollectionTypeSchema {
   collectionName: 'rates';
   info: {
@@ -994,6 +1027,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::profit-coeff.profit-coeff': ApiProfitCoeffProfitCoeff;
       'api::rate.rate': ApiRateRate;
       'api::rub-rate.rub-rate': ApiRubRateRubRate;
       'plugin::content-releases.release': PluginContentReleasesRelease;
