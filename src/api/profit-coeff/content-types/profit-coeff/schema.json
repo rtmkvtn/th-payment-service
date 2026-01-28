@@ -24,7 +24,7 @@
       "type": "boolean"
     },
     "coefficient": {
-      "type": "decimal",
+      "type": "float",
       "required": true
     }
   }

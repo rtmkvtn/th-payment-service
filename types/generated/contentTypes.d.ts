@@ -445,7 +445,7 @@ export interface ApiProfitCoeffProfitCoeff extends Struct.CollectionTypeSchema {
     amount_min: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<0>;
-    coefficient: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    coefficient: Schema.Attribute.Float & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -481,7 +481,7 @@ export interface ApiRateRate extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::rate.rate'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    rate: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    rate: Schema.Attribute.Float & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -509,7 +509,7 @@ export interface ApiRubRateRubRate extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    rate: Schema.Attribute.Decimal;
+    rate: Schema.Attribute.Float;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
